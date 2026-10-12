@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SunSense AI | Smart Highway Lighting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">☀</div>
+      <div>
+        <h2>SunSense <span>AI</span></h2>
+        <small>Smart Highway Lighting</small>
+      </div>
+    </div>
+
+    <nav>
+      <a class="active" href="#dashboard">▦ &nbsp; Dashboard</a>
+      <a href="#simulation">☼ &nbsp; Highway Simulation</a>
+      <a href="#analytics">▥ &nbsp; Energy Analytics</a>
+    </nav>
+
+    <div class="system-status">
+      <span class="online-dot"></span>
+      <div>
+        <strong id="connectionStatus">Checking backend...</strong>
+        <small>Virtual sensor mode</small>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main" id="dashboard">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">INTELLIGENT LIGHTING SYSTEM</p>
+        <h1>SunSense AI Dashboard</h1>
+        <p class="muted">Monitor environmental light and optimize highway lighting.</p>
+      </div>
+      <span class="demo-badge">● LIVE DEMO</span>
+    </header>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span class="muted">Streetlight Status</span>
+        <h2 id="lightStatus">Waiting...</h2>
+        <p id="statusDescription">Connecting to AI</p>
+      </article>
+
+      <article class="stat-card">
+        <span class="muted">Virtual Sensor Reading</span>
+        <h2><span id="intensityValue">15</span><small>%</small></h2>
+        <p>Environmental light intensity</p>
+      </article>
+
+      <article class="stat-card">
+        <span class="muted">Streetlight Brightness</span>
+        <h2><span id="brightnessValue">--</span><small>%</small></h2>
+        <p>AI-recommended output</p>
+      </article>
+
+      <article class="stat-card">
+        <span class="muted">AI Model</span>
+        <h2 id="modelStatus">Checking</h2>
+        <p>Random Forest classifier</p>
+      </article>
+    </section>
+
+    <section class="panel" id="simulation">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LIVE PREVIEW</p>
+          <h2>Highway Lighting Simulation</h2>
+          <p class="muted">Change the virtual sensor reading to test the AI.</p>
+        </div>
+        <span class="demo-badge">NO HARDWARE</span>
+      </div>
+
+      <div class="highway" id="highway">
+        <div class="sun" id="sun">☀</div>
+        <div class="moon" id="moon">☾</div>
+        <div class="cloud">☁</div>
+
+        <div class="lamp lamp-one"><span></span><i></i></div>
+        <div class="lamp lamp-two"><span></span><i></i></div>
+        <div class="lamp lamp-three"><span></span><i></i></div>
+        <div class="lamp lamp-four"><span></span><i></i></div>
+        <div class="lamp lamp-five"><span></span><i></i></div>
+
+        <div class="road">
+          <div class="road-line"></div>
+          <div class="car">🚗</div>
+        </div>
+
+        <div class="scene-label" id="sceneLabel">
+          SENSOR: 15% · AI DECISION: LOADING
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="control-heading">
+          <label for="lightSlider">Virtual sensor light intensity</label>
+          <strong><span id="sliderValue">15</span>%</strong>
+        </div>
+
+        <input
+          id="lightSlider"
+          type="range"
+          min="0"
+          max="100"
+          value="15"
+          step="1"
+        >
+
+        <div class="range-labels">
+          <span>0% · Darkness</span>
+          <span>50% · Medium</span>
+          <span>100% · Bright</span>
+        </div>
+
+        <div class="preset-buttons">
+          <button type="button" data-intensity="10">Night</button>
+          <button type="button" data-intensity="45">Cloudy</button>
+          <button type="button" data-intensity="90">Daylight</button>
+        </div>
+
+        <p id="decisionReason" class="decision">
+          Waiting for AI prediction...
+        </p>
+        <p id="errorMessage" class="error" role="alert"></p>
+      </div>
+    </section>
+
+    <section class="panel" id="analytics">
+      <p class="eyebrow">ENERGY ANALYTICS</p>
+      <h2>Estimated Energy Savings</h2>
+      <p class="muted">
+        Illustrative estimates only, based on an assumed 12 kWh daily baseline.
+        These are not measured energy savings.
+      </p>
+
+      <div class="analytics-grid">
+        <article class="analytics-box">
+          <span>Assumed daily baseline</span>
+          <h3>12 kWh</h3>
+        </article>
+
+        <article class="analytics-box">
+          <span>Estimated daily usage</span>
+          <h3 id="dailyUsage">-- kWh</h3>
+        </article>
+
+        <article class="analytics-box">
+          <span>Estimated daily energy saved</span>
+          <h3 id="dailySavings">-- kWh</h3>
+        </article>
+
+        <article class="analytics-box">
+          <span>Estimated savings</span>
+          <h3 id="savingsPercent">--%</h3>
+        </article>
+      </div>
+      <p class="muted small">
+        Demo estimate assumes full brightness uses 12 kWh/day and DIM uses half.
+        Actual consumption depends on lamp power and operating hours.
+      </p>
+    </section>
+
+    <footer>SunSense AI · Intelligent Highway Lighting Optimizer · Virtual prototype</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
